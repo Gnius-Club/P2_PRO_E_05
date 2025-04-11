@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Sesión 5: ¡Conectando Ideas! – Integración del Núcleo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #ffa500; color: white; text-align: center; padding: 10px; } /* Orange Accent */
+        .activity { margin-bottom: 20px; }
+        .banner {
+            background-color: #ffa500; /* Orange Accent */
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+            list-style: none;
+            display: block;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+         ul, ol {
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555;}
+
+        summary {
+           display: block;
+           list-style: none;
+        }
+        summary::-webkit-details-marker {
+           display: none;
+        }
+
+    </style>
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content) {
+                if (content.style.display === "none" || content.style.display === "") {
+                    content.style.display = "block";
+                } else {
+                    content.style.display = "none";
+                }
+            }
+        }
+
+        window.onload = () => {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.style.display = 'none';
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook - Sesión 5: ¡Conectando Ideas! – Integración del Núcleo</h1>
+    </div>
+    <div class="container">
+        <h2 class="time-title">Tiempo efectivo de clase: 40 minutos</h2>
+
+        <!-- Resumen de Sesión -->
+        <div id="activity-0" class="activity">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">📝 Resumen de Sesión</div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table>
+                    <tr>
+                        <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
+                            <strong>🎯 Objetivo de la Sesión:</strong>
+                            <ul>
+                                <li>Asegurar que todas las partes del núcleo construidas funcionen juntas de manera coherente en Scratch.</li>
+                                <li>Programar y probar las conexiones e interacciones entre diferentes sprites o scripts del núcleo.</li>
+                                <li>Verificar la secuencia completa del flujo del núcleo.</li>
+                            </ul>
+                            <strong>⏱️ Duración Estimada:</strong> 40 minutos.
+                        </td>
+                        <td style="width: 50%; padding: 10px;">
+                            <strong>🔑 Entregable Clave:</strong>
+                            <ul>
+                                <li>Núcleo del prototipo funcionalmente integrado.</li>
+                                <li>Conexiones/mensajes entre sprites/scripts programados y probados.</li>
+                                <li>Tablero Kanban actualizado.</li>
+                            </ul>
+                             <strong>🛠️ Materiales/Preparación:</strong>
+                            <ul>
+                                <li>Dispositivos con acceso a Scratch y los proyectos con el núcleo construido (o casi).</li>
+                                <li>Tablero Kanban de cada equipo actualizado.</li>
+                                <li>Acceso al T-Bar y al diseño técnico/flujo.</li>
+                                <li>Proyector o pantalla.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Desarrollo de la Sesión -->
+
+        <!-- Actividad 1: Plan de Integración -->
+        <div id="activity-1" class="activity">
+             <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🔗 Actividad 1: Plan de Integración ⏰ Tiempo: 7 minutos</div>
+             </div>
+            <div id="activity_1_content" class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (1 min):</strong> Introducir el objetivo: conectar las partes del núcleo.
+                                (<strong>Proyectar Diapositiva 1</strong>: Título "Sesión 5: ¡Conectando Ideas!" y Objetivo: "¡Hacer que nuestro núcleo funcione como un TODO!").
+                            </td>
+                            <td>
+                                "¡Equipos Pro! Han construido las piezas clave del núcleo. ¡Hoy es el día de conectarlas! Como si armáramos un puzzle, vamos a asegurarnos de que todas las partes hablen entre sí y funcionen juntas perfectamente."
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (6 min):</strong> Guiar revisión del T-Bar y código existente para planificar las conexiones. Hacer preguntas guía.
+                                (<strong>Proyectar Diapositiva 2</strong>: Visual del T-Bar + Código Scratch. Preguntas: "¿Cómo interactúan A y B?", "¿Clic en A afecta a B?", "¿Qué mensajes se necesitan?").
+                            </td>
+                            <td>
+                                "Revisen su T-Bar y el código que ya tienen del núcleo. Ahora piensen específicamente en las CONEXIONES:"
+                                <ul>
+                                    <li>"¿Cómo debe interactuar el personaje A con el fondo?"</li>
+                                    <li>"¿El clic en el personaje A debe hacer que el personaje B haga algo?"</li>
+                                    <li>"¿Qué mensajes necesitan enviarse entre los sprites para que ocurra la secuencia que diseñaron?"</li>
+                                    <li>"¿Cómo fluye la interacción de principio a fin dentro del núcleo?"</li>
+                                </ul>
+                                "Dediquen estos minutos a planificar CÓMO van a programar esas conexiones. ¿Usarán bloques de 'enviar mensaje'? ¿Cambiarán variables? ¿Detectarán colisiones?"
+                                <br><br>
+                                <em>(Facilitar la discusión en equipo para que identifiquen los puntos de conexión y cómo los implementarán técnicamente).</em>
+                                <br><br>
+                                "¡Tengan claro su plan de integración antes de empezar a codificar!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 2: ¡Tejiendo el Código! Codificación de Interacción -->
+        <div id="activity-2" class="activity">
+             <div class="banner" onclick="toggleContent('activity_2_content')">
+                 <div class="title">🧶 Actividad 2: ¡Tejiendo el Código! Codificación de Interacción ⏰ Tiempo: 28 minutos</div>
+             </div>
+            <div id="activity_2_content" class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (28 min - Bloque Principal):</strong> Equipos programan las conexiones/mensajes entre sprites/scripts del núcleo. Facilitador circula, apoya la lógica de integración. Roles interactúan.
+                                (<strong>Proyectar Diapositiva 3</strong>: Título "¡A Conectar el Código!". Iconos de piezas de puzzle encajando 🧩, cables conectándose 🔌, mensajes ✉️. Recordatorio visual de roles Pro).
+                            </td>
+                            <td>
+                                "¡Adelante, a tejer esas conexiones en Scratch! Tienen 28 minutos para implementar el plan de integración que acaban de definir."
+                                <br><br>
+                                "<strong>Programadores/as:</strong> Su misión es añadir los bloques necesarios (mensajes, condicionales, variables, etc.) para que las diferentes partes del núcleo interactúen como deben."
+                                <br><br>
+                                "<strong>Testers:</strong> ¡Prueben la secuencia COMPLETA! No solo partes aisladas. ¿El flujo funciona de principio a fin como se diseñó? ¿Las conexiones son fluidas? Reporten cualquier fallo en la integración."
+                                <br><br>
+                                "<strong>Arquitectos/as:</strong> ¡Mantengan la visión de la interacción global! Ayuden a resolver problemas de lógica de integración. Asegúrense de que las conexiones creadas son coherentes con el T-Bar y el flujo general."
+                                <br><br>
+                                "¡El objetivo es que el núcleo funcione como una sola pieza bien orquestada!"
+                                <br><br>
+                                <em>(Circular activamente. Enfocarse en ayudar con la lógica de los mensajes, la sincronización y el flujo entre scripts. Preguntar "¿Qué debería pasar después de esto?", "¿Cómo sabe el sprite B que el sprite A fue clickeado?").</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (Integrado en los 28 min):</strong> Enfatizar la prueba de la secuencia COMPLETA del núcleo. Actualizar Kanban según el progreso de la integración.
+                                (<strong>Proyectar Diapositiva 4</strong>: Título "¡Probando la Secuencia Completa!" con un icono de diagrama de flujo completo ✅ o una cadena de bloques enlazados).
+                            </td>
+                            <td>
+                                <em>(Mientras circulan, recordar la importancia de probar el todo):</em>
+                                <br>
+                                "¡Testers, clave ahora es probar la secuencia entera!"
+                                <br><br>
+                                "Ejecuten el proyecto desde el inicio del núcleo y sigan todo el flujo. ¿Pasa de un estado a otro correctamente? ¿Se activan las interacciones en el orden esperado?"
+                                <br><br>
+                                "A medida que la integración de ciertas partes funcione bien, actualicen el Kanban. Si una conexión clave ya está lista y probada, ¡muevan la tarea correspondiente a '¡Listo!' o márquenla!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 3: Cierre Rápido de Integración -->
+        <div id="activity-3" class="activity">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">⏱️ Actividad 3: Cierre Rápido de Integración ⏰ Tiempo: 5 minutos</div>
+            </div>
+            <div id="activity_3_content" class="content">
+                 <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (3 min):</strong> Actualizar Kanban. Preguntar: ¿El núcleo funciona como un todo?
+                            </td>
+                            <td>
+                                "¡Tiempo, Equipos Pro! Momento de evaluar la integración."
+                                <br><br>
+                                "Actualicen su Kanban por última vez hoy. ¿Cómo quedó el estado de las tareas de integración?"
+                                <br><br>
+                                "La gran pregunta: Después de conectar las piezas, ¿sienten que el núcleo funciona ahora como un TODO coherente?"
+                                <br><br>
+                                <em>(Permitir una respuesta rápida por equipo sobre el estado de integración del núcleo).</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (2 min):</strong> Cerrar sesión. Recordar guardar. Anticipar próxima sesión (Testeo del Núcleo Integrado).
+                                (<strong>Proyectar Diapositiva 5</strong>: Mensaje "¡Núcleo Integrado! 💪 Guardar. Próxima parada: ¡Pruebas de Fuego! 🔥").
+                            </td>
+                            <td>
+                                "¡Fantástico trabajo conectando las ideas hoy! Han dado un paso enorme al hacer que las partes de su núcleo trabajen juntas."
+                                <br><br>
+                                "¡ASEGÚRENSE DE GUARDAR TODO!"
+                                <br><br>
+                                "Ahora que el núcleo está (o casi está) integrado, la próxima sesión será crucial: ¡Las Pruebas de Fuego! 🔥 Lo someteremos a pruebas exhaustivas para asegurarnos de que es robusto y funciona perfectamente como un todo."
+                                <br><br>
+                                "¡Prepárense para el testeo final del núcleo en la Sesión 6!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div> <!-- Fin del container -->
+</body>
+</html>
